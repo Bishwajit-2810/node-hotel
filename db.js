@@ -6,7 +6,10 @@ if (!mongoUrl) {
     console.log("MongoDB connection string is undefined. Check your .env file.");
 }
 
-mongoose.connect(mongoUrl)
+mongoose.connect(mongoUrl,{
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+})
 
 
 const db = mongoose.connection;
