@@ -1,6 +1,6 @@
 const mongoose = require("mongoose")
 require('dotenv').config()
-const mongoUrl = process.env.MONGO_URL_LOCAL
+const mongoUrl = process.env.MONGO_URL
 
 if (!mongoUrl) {
     console.log("MongoDB connection string is undefined. Check your .env file.");
