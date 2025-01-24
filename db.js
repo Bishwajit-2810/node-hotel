@@ -1,5 +1,10 @@
 const mongoose = require("mongoose")
-const mongoUrl = "mongodb://localhost:27017/hotels"
+require('dotenv').config()
+const mongoUrl = process.env.MONGO_URL_LOCAL
+
+if (!mongoUrl) {
+    console.log("MongoDB connection string is undefined. Check your .env file.");
+}
 
 mongoose.connect(mongoUrl)
 
